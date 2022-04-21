@@ -7,6 +7,7 @@ import TodoList from './components/todolist';
 
 
 interface Todo {
+  key?: string;
   item?:string
 }
 
@@ -46,7 +47,7 @@ const Home: React.FC <Todo> =(props)  => {
      style={{listStyle:"none"}}
      >
       {todo.map((todo, index) => (
-           <li style={{marginTop:"5px"}}><TodoList id="1" item={todo.item}/>  </li>
+           <li key={index} style={{marginTop:"5px"}}><TodoList id={index.toString()} item={todo.item}/>  </li>
           
         ))}
       </ul>   
